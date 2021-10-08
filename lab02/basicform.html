@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+
+<body>
+    <form action="handleInfo.php" method="POST">
+        <label for="email">Enter Email</label>
+        <input type="email" name="email" />
+        <br />
+        <label for="name">Name</label>
+        <input type="text" name="name" />
+        <br />
+        <label for="class">Class</label>
+        <input type="text" name="class" />
+        <br />
+        <label for="uni">University</label>
+        <input type="text" name="uni" />
+        <br />
+        <label for="hobby[]">Hobbies:</label>
+        <br>
+        <input type="checkbox" name="hobby[]" value="ReadBook" />Read book
+        <br />
+        <input type="checkbox" name="hobby[]" value="Eat" />Eat
+        <br />
+        <input type="checkbox" name="hobby[]" value="Drink" />Drink
+        <br />
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+
+</html>
