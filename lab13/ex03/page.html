@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Example Message Box Page</title>
+<script type="text/javascript">
+function doLoad()
+{
+document.getElementById('sweet-link').
+addEventListener('click', confirmClick, false);
+}//end doLoad
+function confirmClick()
+{
+return confirm('Are you sure to go to that link?');
+}//end confirmClick
+window.addEventListener('load', doLoad, false);
+</script>
+</head>
+<body>
+<a id="sweet-link" href="http://www.hut.edu.vn">HUT</a>
+</body>
+</html>

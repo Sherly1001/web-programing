@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Colorful event</title>
+        <style>
+            #para {
+                font-size: 40px;
+            }
+        </style>
+        <script>
+            function over() {
+                document.getElementById("para").style.color = "red"
+            }
+            function out() {
+                document.getElementById("para").style.color = "blue"
+            }
+        </script>
+    </head>
+    <body>
+        <div id = "para" onmouseover="over(this)" onmouseout="out(this)">
+            Hover on this paragraph
+        </div>
+    </body>
+</html>

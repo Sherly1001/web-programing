@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ajax - PHP example</title>
+        <style>
+            .form_demo {
+                width: 300px;
+                height: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 50px;
+                background-color: blanchedalmond;
+                padding: 20px;
+            }
+            input {
+                width: 200px;
+                float: right;
+            }
+            h1 {
+                margin-top: 30px;
+                text-align: center;
+            }
+        </style>
+        <script  language="javascript" type="text/javascript">
+
+            // Get the HTTP Object
+            function getHTTPObject(){
+                if (window.ActiveXObject)
+                    return new ActiveXObject("Microsoft.XMLHTTP");
+                else if (window.XMLHttpRequest)
+                    return new XMLHttpRequest();
+                else {
+                    alert("Your browser does not support AJAX.");
+                    return null;
+                }
+            }
+            
+            // Implement business logic
+            function doWork(){
+                httpObject = getHTTPObject();
+                if (httpObject != null) {
+                    httpObject.open("GET", "upperCase.php?inputText=" +document.getElementById('inputText').value, true);
+                    httpObject.send(null);
+                    httpObject.onreadystatechange = setOutput;
+                }
+            }
+
+            // Change the value of the outputText field
+            function setOutput(){
+                if(httpObject.readyState == 4){
+                    document.getElementById('outputText').value = httpObject.responseText;
+                }
+            }
+            var httpObject = null;
+
+        </script>
+    </head>
+
+    <body>
+        <form class="form_demo" name="testForm">
+            <h1>Form</h1>
+            Input text: <input type="text" onkeyup="doWork();" name="inputText" id="inputText" />
+            <br><br>
+            Output text: <input type="text" name="outputText" id="outputText" />
+        </form>
+    </body>
+</html>
